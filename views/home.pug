@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title Home
+        link(rel='stylesheet', href='/style.css')
+    body
+        div#posts
+            each post in posts
+                div.post
+                    h2
+                        a(href=`/post/${post._id}`) #{post.title}
+
+                    div.body=post.body
+                    div.timestamp
+                        p #{post.createdAt.toLocaleDateString()} at #{post.createdAt.toLocaleTimeString()}
+        footer
+            p Read our privacy policy 
+                a(href='/privacy') here.

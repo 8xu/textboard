@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title #{post.title}
+        link(rel='stylesheet', href='/style.css')
+    body
+        div#posts
+            div.post
+                h2 #{post.title}
+                div.body=post.body
+                div.timestamp
+                    p Posted on #{post.createdAt.toLocaleDateString()} at #{post.createdAt.toLocaleTimeString()}
+        footer
+            p Go back to the 
+                a(href='/') home page.

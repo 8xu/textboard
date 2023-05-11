@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a:any-link {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+h2 {
+    color: rebeccapurple
+}
+
+div.post {
+    padding: 1em;
+    margin: 10px auto;
+}
+
+div.post div.body {
+    padding-left: 1em;
+}
+
+div.post div.timestamp {
+    float: right;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

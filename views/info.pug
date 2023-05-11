@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title Home
+        link(rel='stylesheet', href='/style.css')
+    body
+        h1 Posts
+            p Posts are stored in a MongoDB database. Each post has a title, a body, and a created at date, nothing more!
+
+            h2 Title
+            p type: String,
+            p required: true,
+            p mn: #{minTitleLength}
+                p max: #{maxTitleLength}
+                
+            h2 Body
+            p type: String,
+            p required: true,
+            p min: #{minBodyLength}
+            p max: #{maxBodyLength}
+
+            h2 Created At
+            p type: Date,
+            p default: Date.now
+
+        footer
+            p Go back to the 
+                a(href='/') home page.
