@@ -1,14 +1,16 @@
-import mongoose from 'mongoose';
+import { Sequelize } from 'sequelize';
 
-async function connectDB() {
-    const URI = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb://localhost:27017/imageboard';
+const db = new Sequelize({
+    dialect: 'sqlite',
+    storage: './database.db'
+});
 
-    try {
-        await mongoose.connect(URI);
-        console.log(`Connected to database: ${URI}`);
-    } catch (error) {
-        console.log(error);
-    }
-}
+db.authenticate()
+    .then(() => {
+        console.log('Connection to database has been established successfully.');
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
 
-export default connectDB;
+export default db;
